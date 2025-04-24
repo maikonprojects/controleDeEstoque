@@ -8,7 +8,7 @@ public class RemocaoDeProduto {
         RepositorioProdutos repProd = new RepositorioProdutos();
 
         Produto prop = new Produto();
-        repProd.remover(prop, 3);
+        repProd.remover( 3);
 
 
 

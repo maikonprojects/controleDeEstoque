@@ -28,12 +28,12 @@ public class RepositorioProdutos {
         }
     }
 
-    public Produto alterar(int cod, Produto produto){
+    public Produto alterar(int cod, double preco){
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
             Produto prod = em.find(Produto.class, cod);
-            em.merge(produto);
+            prod.setPreco(preco);
             em.getTransaction().commit();
             return prod;
         }finally {
@@ -42,7 +42,7 @@ public class RepositorioProdutos {
     }
 
 
-    public void remover(Produto prod, int codigo){
+    public void remover(int codigo){
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
